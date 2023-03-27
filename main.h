@@ -5,18 +5,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-/*helper.c*/
-int _strlen(const char *);
-int print(char *);
-char *to_string(long int, int);
-
 /* printf.c */
 int _printf(const char *, ...);
-
-/* handler.c */
-int handler(const char *, va_list);
-int percent_handler(const char *, va_list, int *);
-
+char *to_string(long int, int);
+int _putchar(char c);
 /* printers */
 int print_string(va_list);
 int print_char(va_list);
@@ -29,10 +21,8 @@ int print_hexadecimal_low(va_list);
 int print_hexadecimal_upp(va_list);
 int print_pointer(va_list);
 int print_rev_string(va_list);
+int print_percent();
 
-/* _putchar.c */
-int _putchar(char);
-int buffer(char);
 
 /**
  * struct _format - Typedef struct

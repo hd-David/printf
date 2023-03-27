@@ -10,23 +10,39 @@
  * Return: The number of characters printed (excluding
  * the null byte used to end output to strings)
  **/
-int _printf(const char *format, ...)
-{
-int size;
-va_list args;
+int _printf(const char *format, ...) {
+  va_list arg;
+  int printed_chars = 0;
 
-if (format == NULL)
-return (-1);
+  va_start(arg, format);
 
-size = _strlen(format);
-if (size <= 0)
-return (0);
+  while (*format != '\0') {
+    if (*format == '%') {
+      format++;
+      switch (*format) {
+      case 'c':
+	printed_chars += print_char(arg);
+	break;
+      case 's':
+	printed_chars += print_string(arg);
+	break;
+      case '%':
+	printed_chars += print_percent(arg);
+	break;
+      default:
+	putchar('%');
+	putchar(*format);
+	printed_chars += 2;
+	break;
+      }
+    }
+    else {
+      putchar(*format);
+      printed_chars++;
+    }
+    format++;
+  }
 
-va_start(args, format);
-size = handler(format, args);
-
-_putchar(-1);
-va_end(args);
-
-return (size);
+  va_end(arg);
+  return printed_chars;
 }

@@ -21,13 +21,13 @@ int size;
 str_num = to_string(va_arg(list, unsigned long int), 16);
 
 if ( !_strcmp(str_num, "0"))
-return (print("(nil)"));
-size = print("0x");
+return (_putchar("(nil)"));
+size = _putchar("0x");
 
 if (!_strcmp(str_num, "-1"))
-size += print("fffffffffffff");
+size += _putchar("fffffffffffff");
 else
-size += print(str_num);
+size += _putchar(str_num);
 return (size);
 }
 

@@ -14,7 +14,7 @@ int size;
 
 p_buff = to_string(va_arg(list, unsigned int), 2);
 
-size = print(p_buff);
+size = _putchar(p_buff);
 
 return (size);
 }
