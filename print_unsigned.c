@@ -7,14 +7,14 @@
  *Return: length of the number
  */
 
-int Print_unsigned(va_list list)
+int print_unsigned(va_list list)
 {
 char *str_num;
 int size;
 
-str_num = itoa(val_arg(list, unsigned int), 10);
+str_num = to_string(va_arg(list, unsigned int), 10);
 
-size = print(str_num != NULL) ? str_num : "NULL");
+size = print((str_num != NULL) ? str_num : "NULL");
 
 return(size);
 

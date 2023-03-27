@@ -18,11 +18,11 @@ int print_pointer(va_list list)
 char *str_num;
 int size;
 
-str_num = to_string(va_arg(list, unsigned long int), 16)
+str_num = to_string(va_arg(list, unsigned long int), 16);
 
-if ( !_strcmp(str_num, "0"));
-return (ptint("(nil)"));
-size = print("0x")
+if ( !_strcmp(str_num, "0"))
+return (print("(nil)"));
+size = print("0x");
 
 if (!_strcmp(str_num, "-1"))
 size += print("fffffffffffff");

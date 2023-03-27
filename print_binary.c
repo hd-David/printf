@@ -3,17 +3,18 @@
 
 /**
  * print_binary - Prints a binary representation of an unsigned integer.
- * @n: The unsigned integer to print in binary.
+ * @list: The unsigned integer to print in binary.
  *
  * Return: The number of characters printed.
  */
-int print_binary(unsigned int n)
+int print_binary(va_list list)
 {
-int count = 0;
+char *p_buff;
+int size;
 
-if (n > 1)
-count += print_binary(n / 2);
-count += _putchar((n % 2) + '0');
+p_buff = to_string(va_arg(list, unsigned int), 2);
 
-return (count);
+size = print(p_buff);
+
+return (size);
 }
