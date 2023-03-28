@@ -40,5 +40,5 @@ Invalid format string `(e.g. missing or mismatched format specifiers)`
 Insufficient number of arguments for the given format string
 Invalid format specifier `(e.g. %g, %p, etc.)`
 ##### Authors
-Sophie Mamani
-David Mwewa
+- Sophie Mamani
+- David Mwewa
